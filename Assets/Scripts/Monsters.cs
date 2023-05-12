@@ -9,7 +9,7 @@ public class Monsters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bus = GameObject.Find("SasjaBus").GetComponent<Transform>();
+        bus = GameObject.Find("Bus").GetComponent<Transform>();
         
     }
 
