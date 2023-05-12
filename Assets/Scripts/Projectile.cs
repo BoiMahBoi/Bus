@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+
     private void Start()
     {
-        Invoke("ObjectDestroyerHAHAHAHAHA", 15);
-    }
-
-    private void FixedUpdate()
-    {
-        transform.position += Vector3.up * Time.deltaTime * 3;
+        Invoke("ObjectDestroyerHAHAHAHAHA", 2);
+        GetComponent<Rigidbody2D>().velocity = transform.up * 12;
     }
 
     private void ObjectDestroyerHAHAHAHAHA()
