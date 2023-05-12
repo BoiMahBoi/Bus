@@ -7,7 +7,7 @@ public class SceneryMover : MonoBehaviour
 
     private void Start()
     {
-        Invoke("ObjectDestroyerHAHAHAHAHA", 15);
+        Invoke("ObjectDestroyerHAHAHAHAHA", 10);
     }
 
     private void FixedUpdate()

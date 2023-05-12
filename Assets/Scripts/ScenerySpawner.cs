@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScenerySpawner : MonoBehaviour
 {
 
-    public GameObject objectToBeSpawned;
+    public GameObject[] objectToBeSpawned;
 
     [Header("Spawn Coordinates")]
     public float spawnY;
@@ -20,19 +20,22 @@ public class ScenerySpawner : MonoBehaviour
         StartCoroutine(spawnObject());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public IEnumerator spawnObject()
     {
         float spawnTime = Random.Range(minTime, maxTime);
         
         yield return new WaitForSeconds(spawnTime);
-        GameObject newScenery = Instantiate(objectToBeSpawned, new Vector3(transform.position.x + 20, transform.position.y + spawnY, transform.position.z), transform.rotation);
-        newScenery.transform.SetParent(gameObject.transform);
+        if(objectToBeSpawned.Length > 1)
+        {
+            GameObject newScenery = Instantiate(objectToBeSpawned[Random.Range(0, objectToBeSpawned.Length)], new Vector3(transform.position.x + 15, transform.position.y + spawnY, transform.position.z), transform.rotation);
+            newScenery.transform.SetParent(gameObject.transform);
+        }
+        else
+        {
+            GameObject newScenery = Instantiate(objectToBeSpawned[0], new Vector3(transform.position.x + 20, transform.position.y + spawnY, transform.position.z), transform.rotation);
+            newScenery.transform.SetParent(gameObject.transform);
+        }
         StartCoroutine(spawnObject());
     }
 }
