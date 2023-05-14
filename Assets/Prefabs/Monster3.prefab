@@ -114,3 +114,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf15517f392f104ba5ac10d681caeee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splatEffect: {fileID: 8617171373595362010, guid: 05c347243c7b03e4a8031104c5ae41a6, type: 3}
