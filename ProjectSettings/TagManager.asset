@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bus
   - Projectile
+  - Monster
   layers:
   - Default
   - TransparentFX

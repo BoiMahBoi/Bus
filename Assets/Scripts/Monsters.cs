@@ -17,7 +17,7 @@ public class Monsters : MonoBehaviour
     void Update()
     {
         //So the monsters move towards the bus. 
-        transform.position = Vector3.MoveTowards(transform.position, bus.position, 5 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, bus.position, 2 * Time.deltaTime);
 
     }
 
@@ -26,12 +26,13 @@ public class Monsters : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Bus"))
         {
-            Debug.Log("Damage taken");
+            collision.gameObject.GetComponent<BusHealth>().TakeDamange();
             Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Projectile"))
         {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
 
