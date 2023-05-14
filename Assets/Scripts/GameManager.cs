@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public Slider progressBar;
     private bool gamePaused;
 
+    public GameObject gameOverScreen;
+    public GameObject winScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         if(!gamePaused)
         {
-            progressBar.value += (0.1f * 0.01f);
+            progressBar.value += (0.05f * 0.01f);
             if(progressBar.value >= progressBar.maxValue)
             {
                 GameWon();
@@ -33,13 +36,13 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         gamePaused = true;
-        Debug.Log("Game Over");
+        gameOverScreen.SetActive(true);
     }
 
     public void GameWon()
     {
         Time.timeScale = 0;
         gamePaused = true;
-        Debug.Log("Game Won!");
+        winScreen.SetActive(true);
     }
 }

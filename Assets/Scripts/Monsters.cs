@@ -6,18 +6,20 @@ public class Monsters : MonoBehaviour
 {
     private Transform bus;
     public GameObject splatEffect;
+    private Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         bus = GameObject.Find("Bus").GetComponent<Transform>();
+        targetPosition = new Vector3(bus.position.x + Random.Range(-4, 4), bus.position.y, bus.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
         //So the monsters move towards the bus. 
-        transform.position = Vector3.MoveTowards(transform.position, bus.position, 2 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, 2 * Time.deltaTime);
 
     }
 
