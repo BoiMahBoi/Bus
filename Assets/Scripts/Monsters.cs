@@ -5,12 +5,12 @@ using UnityEngine;
 public class Monsters : MonoBehaviour
 {
     private Transform bus;
+    public GameObject splatEffect;
 
     // Start is called before the first frame update
     void Start()
     {
         bus = GameObject.Find("Bus").GetComponent<Transform>();
-        
     }
 
     // Update is called once per frame
@@ -33,6 +33,7 @@ public class Monsters : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             Destroy(collision.gameObject);
+            Instantiate(splatEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 

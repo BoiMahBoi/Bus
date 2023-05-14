@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class SplatEffect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        Invoke("ObjectDestroyerHAHAHAHAHA", 1);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ObjectDestroyerHAHAHAHAHA()
     {
-        
+        Destroy(gameObject);
     }
 }
